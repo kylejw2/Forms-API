@@ -1,0 +1,4 @@
+1. Which What RESTful functions are you going to use to complete this assignment?
+    Register new user --- Action: Post, Parameters: {new User}, Path: /users, Result: 200 {new User}, Description: creates new user in the mock-database and returns the new user
+    Login --- Action: Get, Parameters: user.email and user.password in the  URL (not in the body of the request), Path: /users/:email-:password, Result: 200 and returns a message saying whether the authorization was valid or denied, Description: accesses the database and scans for a matching user
+    Forgot password --- Action: Patch, Parameters: {optional user properties}, Path: /users/:email, Result: 200 and returns a message saying whether the password was updated successfully or not, Description: ensures the email is valid and if it is, changes the password and returns the name of the user with a success message
