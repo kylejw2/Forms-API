@@ -27,8 +27,8 @@ const users = [
 ]
 app.use(express.json());
 // Login
-app.get('/', (req, res) => res.send(users));
-app.get('/users', (req, res) => res.send("You must include the email and password in the url.\nIn this format: .../users/email-password"));
+app.get('/', (req, res) => res.send(`Look up http://localhost:${port}/users`));
+app.get('/users', (req, res) => res.send(users));
 app.post('/users', (req, res) => {    
     // pick up the stuff in the body
     let authorized = false;
