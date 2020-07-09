@@ -29,10 +29,12 @@ app.use(express.json());
 // Login
 app.get('/', (req, res) => res.send(users));
 app.get('/users', (req, res) => res.send("You must include the email and password in the url.\nIn this format: .../users/email-password"));
-app.get('/users/:email-:password', (req, res) => {    
+app.post('/users', (req, res) => {    
+    // pick up the stuff in the body
     let authorized = false;
+    const body = req.body;
     users.forEach(user => {
-        if (user.email === req.params.email && user.password === req.params.password) {
+        if (user.email === body.email && user.password === body.password) {
             authorized = true;
         }
     })
